@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill bar percentage</title>
+    <style>
+        :root{
+  --MATH-PI: 3.1415px;
+}
+        .tool-list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  align-items: center;
+}
+.tool-list > li {
+	position: relative;
+	text-align: center;
+	flex: 0 0 25%;
+}
+.tool-list > li > svg {
+	position: relative;
+	fill: transparent;
+	width: 50%;
+	transform: rotate(-90deg);
+}
+.tool-list > li > svg > circle {
+	stroke-width: 1px;
+	stroke: #cdcdcd;
+}
+.tool-list > li > svg > circle.cbar {
+	stroke-width: 5px;
+	stroke:black;
+	stroke-linecap: round;
+	stroke-dashoffset: 0;
+	stroke-dasharray: calc(var(--MATH-PI) * 45 * 2);
+	transition: all 0.8s;
+	transition-timing-function: cubic-bezier(.64,.51,.16,.86);
+}
+.tool-list > li:hover > svg > circle.cbar {
+	stroke-width: 4px;
+	stroke: #225687;
+	stroke-dashoffset: calc(var(--MATH-PI) * 45 * 2 * (1 - var(--percent)));
+}
+.tool-list > li > .tl-name,
+.tool-list > li > .tl-exp {
+	position: absolute;
+    right: 35%;
+	
+  font-size: 6px;
+	color:black;
+}
+.tool-list > li > .tl-name {
+	top: 50%;
+	font-size: 1.9rem;
+	transform: translate(-50%, -50%);
+}
+.tool-list > li > .tl-exp {	
+	top: calc(50% + 1.4rem);
+	font-size: 1.4rem;
+	transform: translate(-50%, -50%);
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="tool-list">
+      <li>
+        <svg viewbox="0 0 100 100">
+          <circle cx="50" cy="50" r="45"></circle>
+          <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.8"></circle>
+        </svg>
+        <span class="tl-name">Word</span>
+        <span class="tl-exp">80%</span>
+      </li>
+      </ul>
+      </div>      
+    <div class="box">
+        <ul class="tool-list">
+      <li>
+        <svg viewbox="0 0 100 100">
+          <circle cx="50" cy="50" r="45"></circle>
+          <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.8"></circle>
+        </svg>
+        <span class="tl-name">Word</span>
+        <span class="tl-exp">80%</span>
+      </li>
+      </ul>
+      </div>      
+    <div class="box">
+        <ul class="tool-list">
+      <li>
+        <svg viewbox="0 0 100 100">
+          <circle cx="50" cy="50" r="45"></circle>
+          <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.8"></circle>
+        </svg>
+        <span class="tl-name">Word</span>
+        <span class="tl-exp">80%</span>
+      </li>
+      </ul>
+      </div>      
+   
+</body>
+</html>
